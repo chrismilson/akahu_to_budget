@@ -21,7 +21,7 @@ def shallow_compare_dicts(dict1, dict2):
     return dict1_filtered == dict2_filtered
 
 
-def generate_mapping_stub(mapping_file="akahu_budget_mapping.json"):
+def generate_mapping_stub(mapping_file="/app/data/akahu_budget_mapping.json"):
     """Generate a stub JSON file for the mapping."""
     stub = {
         "akahu_accounts": {},
@@ -35,7 +35,7 @@ def generate_mapping_stub(mapping_file="akahu_budget_mapping.json"):
 
 
 def load_existing_mapping(
-    mapping_file="akahu_budget_mapping.json", generate_stub=False
+    mapping_file="/app/data/akahu_budget_mapping.json", generate_stub=False
 ):
     """Load existing mapping from JSON file"""
     try:
@@ -532,7 +532,7 @@ def remove_seq(data):
         return data
 
 
-def save_mapping(data_to_save, mapping_file="akahu_budget_mapping.json"):
+def save_mapping(data_to_save, mapping_file="/app/data/akahu_budget_mapping.json"):
     """Saves the mapping along with Akahu, Actual, and YNAB accounts to a JSON file."""
     try:
         serialized_data = json.dumps(data_to_save, indent=4)
